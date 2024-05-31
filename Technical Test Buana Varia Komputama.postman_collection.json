@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "25a8d805-0098-422c-87b9-fcdeb1711b9f",
+		"name": "Technical Test Buana Varia Komputama",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11647014"
+	},
+	"item": [
+		{
+			"name": "search item",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "selected item",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/items/Tas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"items",
+						"Tas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add to cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_cart\": \"Cart2\",\r\n    \"item\": [\r\n        {\r\n            \"id_item\": 1,\r\n            \"name\": \"Baju\",\r\n            \"description\": \"Merk LV\",\r\n            \"price\": 1000000\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/items/addToCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"items",
+						"addToCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add more items to cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_cart\": \"Cart2\",\r\n    \"item\": [\r\n        {\r\n            \"id_item\": 2,\r\n            \"name\": \"Sepatu\",\r\n            \"description\": \"Merk Nike\",\r\n            \"price\": 3000000\r\n        },\r\n        {\r\n            \"id_item\": 3,\r\n            \"name\": \"Kemeja\",\r\n            \"description\": \"Merk Alisan\",\r\n            \"price\": 300000\r\n        },\r\n        {\r\n            \"id_item\": 4,\r\n            \"name\": \"Topi\",\r\n            \"description\": \"Merk Gucci\",\r\n            \"price\": 500000\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/items/addMoreItemsToCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"items",
+						"addMoreItemsToCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove item from cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/items/removeItemFromCart?idCart=Cart2&idItem=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"items",
+						"removeItemFromCart"
+					],
+					"query": [
+						{
+							"key": "idCart",
+							"value": "Cart2"
+						},
+						{
+							"key": "idItem",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculate Price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/items/calculatePrice?idCart=Cart2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"items",
+						"calculatePrice"
+					],
+					"query": [
+						{
+							"key": "idCart",
+							"value": "Cart2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
